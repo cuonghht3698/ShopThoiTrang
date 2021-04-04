@@ -123,6 +123,7 @@ namespace Dashboard.Views.NguoiDung
             this.txtSoLuong.TabIndex = 36;
             this.txtSoLuong.Text = "1";
             this.txtSoLuong.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txtSoLuong.TextChanged += new System.EventHandler(this.txtSoLuong_TextChanged);
             // 
             // label4
             // 

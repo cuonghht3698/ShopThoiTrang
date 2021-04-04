@@ -222,5 +222,20 @@ namespace Dashboard.Views.NguoiDung
         {
 
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
+
+        private void btnAnalytics_Click_1(object sender, EventArgs e)
+        {
+            lbltitle.Text ="Giỏ hàng";
+            pnlNav.Height = btnAnalytics.Height;
+            pnlNav.Top = btnAnalytics.Top;
+            pnlNav.Left = btnAnalytics.Left;
+            btnDashbord.BackColor = Color.FromArgb(46, 51, 73);
+            openChildForm(new DonHang());
+        }
     }
 }

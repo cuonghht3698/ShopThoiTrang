@@ -202,6 +202,7 @@ namespace Dashboard.Views.NguoiDung
             this.btnAnalytics.Text = "Đơn hàng";
             this.btnAnalytics.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
             this.btnAnalytics.UseVisualStyleBackColor = true;
+            this.btnAnalytics.Click += new System.EventHandler(this.btnAnalytics_Click_1);
             // 
             // btnDashbord
             // 
@@ -232,6 +233,7 @@ namespace Dashboard.Views.NguoiDung
             this.button1.TabIndex = 12;
             this.button1.Text = "X";
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // lbltitle
             // 

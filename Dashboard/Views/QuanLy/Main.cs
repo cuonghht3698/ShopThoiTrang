@@ -84,9 +84,11 @@ namespace Dashboard
 
         private void btnContactUs_Click(object sender, EventArgs e)
         {
+            lbltitle.Text = "Quản lý đơn hàng";
             pnlNav.Height = btnContactUs.Height;
             pnlNav.Top = btnContactUs.Top;
-            btnContactUs.BackColor = Color.FromArgb(46, 51, 73);
+            btnCalender.BackColor = Color.FromArgb(46, 51, 73);
+            openChildForm(new QLDonHang());
         }
 
         private void btnsettings_Click(object sender, EventArgs e)

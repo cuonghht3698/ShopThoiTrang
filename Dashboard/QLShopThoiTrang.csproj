@@ -81,12 +81,17 @@
     <Compile Include="Views\Login.Designer.cs">
       <DependentUpon>Login.cs</DependentUpon>
     </Compile>
-    <Compile Include="Views\NguoiDung\connect.cs" />
     <Compile Include="Views\NguoiDung\Detail.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Views\NguoiDung\Detail.Designer.cs">
       <DependentUpon>Detail.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\NguoiDung\DonHang.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\NguoiDung\DonHang.Designer.cs">
+      <DependentUpon>DonHang.cs</DependentUpon>
     </Compile>
     <Compile Include="Views\NguoiDung\FormMain.cs">
       <SubType>Form</SubType>
@@ -138,6 +143,12 @@
     <Compile Include="Views\QuanLy\NhapSanPham.Designer.cs">
       <DependentUpon>NhapSanPham.cs</DependentUpon>
     </Compile>
+    <Compile Include="Views\QuanLy\QLDonHang.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\QuanLy\QLDonHang.Designer.cs">
+      <DependentUpon>QLDonHang.cs</DependentUpon>
+    </Compile>
     <Compile Include="Views\QuanLy\QLTaiKhoan.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -158,6 +169,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Views\NguoiDung\Detail.resx">
       <DependentUpon>Detail.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\NguoiDung\DonHang.resx">
+      <DependentUpon>DonHang.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\NguoiDung\FormMain.resx">
       <DependentUpon>FormMain.cs</DependentUpon>
@@ -192,6 +206,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Views\QuanLy\NhapSanPham.resx">
       <DependentUpon>NhapSanPham.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\QuanLy\QLDonHang.resx">
+      <DependentUpon>QLDonHang.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\QuanLy\QLTaiKhoan.resx">
       <DependentUpon>QLTaiKhoan.cs</DependentUpon>
