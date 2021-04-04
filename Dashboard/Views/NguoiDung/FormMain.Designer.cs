@@ -186,6 +186,7 @@ namespace Dashboard.Views.NguoiDung
             this.btnCalender.Text = "Quản lý đơn hàng";
             this.btnCalender.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
             this.btnCalender.UseVisualStyleBackColor = true;
+            this.btnCalender.Click += new System.EventHandler(this.btnCalender_Click_1);
             // 
             // btnAnalytics
             // 

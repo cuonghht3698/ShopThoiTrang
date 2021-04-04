@@ -99,6 +99,12 @@
     <Compile Include="Views\NguoiDung\FormMain.Designer.cs">
       <DependentUpon>FormMain.cs</DependentUpon>
     </Compile>
+    <Compile Include="Views\NguoiDung\LichSuDonHang.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\NguoiDung\LichSuDonHang.Designer.cs">
+      <DependentUpon>LichSuDonHang.cs</DependentUpon>
+    </Compile>
     <Compile Include="Views\NguoiDung\ViewSanPham.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -161,6 +167,12 @@
     <Compile Include="Views\QuanLy\SanPham.Designer.cs">
       <DependentUpon>SanPham.cs</DependentUpon>
     </Compile>
+    <Compile Include="Views\QuenMatKhau.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\QuenMatKhau.Designer.cs">
+      <DependentUpon>QuenMatKhau.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="Views\DangKy.resx">
       <DependentUpon>DangKy.cs</DependentUpon>
     </EmbeddedResource>
@@ -175,6 +187,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Views\NguoiDung\FormMain.resx">
       <DependentUpon>FormMain.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\NguoiDung\LichSuDonHang.resx">
+      <DependentUpon>LichSuDonHang.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\NguoiDung\ViewSanPham.resx">
       <DependentUpon>ViewSanPham.cs</DependentUpon>
@@ -215,6 +230,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Views\QuanLy\SanPham.resx">
       <DependentUpon>SanPham.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\QuenMatKhau.resx">
+      <DependentUpon>QuenMatKhau.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">

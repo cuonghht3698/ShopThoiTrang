@@ -1,4 +1,5 @@
 ﻿using Dashboard.Buniss;
+using Dashboard.Views.QuanLy;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -236,6 +237,16 @@ namespace Dashboard.Views.NguoiDung
             pnlNav.Left = btnAnalytics.Left;
             btnDashbord.BackColor = Color.FromArgb(46, 51, 73);
             openChildForm(new DonHang());
+        }
+
+        private void btnCalender_Click_1(object sender, EventArgs e)
+        {
+            lbltitle.Text = "Quản lý đơn hàng";
+            pnlNav.Height = btnCalender.Height;
+            pnlNav.Top = btnCalender.Top;
+            pnlNav.Left = btnCalender.Left;
+            btnDashbord.BackColor = Color.FromArgb(46, 51, 73);
+            openChildForm(new QLDonHang(true));
         }
     }
 }

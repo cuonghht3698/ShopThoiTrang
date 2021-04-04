@@ -42,9 +42,10 @@ namespace Dashboard.Views.QuanLy
             cbSearchChucVu.Items.Add(Role.quanlykho);
             cbSearchChucVu.Items.Add(Role.nhanvien);
             cbSearchChucVu.Items.Add(Role.khachhang);
-            cbSearchChucVu.SelectedIndex = 1;
+            cbSearchChucVu.SelectedIndex = 0;
             cbTrangThai.SelectedIndex = 0;
             sTrangThai = true;
+            checkActive.Checked = true;
             getDataNhanVien();
             dateTimePicker1.CustomFormat = "dd/MM/yyyy";
         }
@@ -90,7 +91,6 @@ namespace Dashboard.Views.QuanLy
             int id;
             bool gioitinh, active;
             DateTime ngaysinh;
-            id = int.Parse(txtMa.Text);
             ten = txtTen.Text;
             sdt = txtSdt.Text;
             quequan = txtQueQuan.Text;
@@ -107,8 +107,8 @@ namespace Dashboard.Views.QuanLy
             }
             else
             {
-                string sql = "Insert into users (ten,ngaysinh,sdt,gioitinh,quequan,username,passwordHash,active,quyen) values('" + ten +
-                  "','" + ngaysinh + "','" + sdt + "','" + gioitinh + "','" + quequan + "','" + username + "','" + password + "','" + active + "','" + quyen + "')";
+                string sql = "Insert into users (ten,ngaysinh,sdt,gioitinh,quequan,username,passwordHash,active,quyen) values(N'" + ten +
+                  "','" + ngaysinh + "','" + sdt + "','" + gioitinh + "',N'" + quequan + "','" + username + "','" + password + "','" + active + "',N'" + quyen + "')";
                 cn.ExecuteNonQuery(sql);
                 MessageBox.Show("Tạo tài khoản thành công!", "Thông báo");
             }

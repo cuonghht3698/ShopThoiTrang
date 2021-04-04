@@ -86,5 +86,11 @@ namespace Dashboard.Views
             txtPassword.Text = "phat";
             LoginAdmin();
         }
+
+        private void linkQuenMatKhau_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            QuenMatKhau dk = new QuenMatKhau();
+            dk.Show();
+        }
     }
 }

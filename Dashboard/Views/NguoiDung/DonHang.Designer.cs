@@ -33,7 +33,6 @@ namespace Dashboard.Views.NguoiDung
             this.txtSDT = new System.Windows.Forms.TextBox();
             this.txtGhiChu = new System.Windows.Forms.TextBox();
             this.txtDiaChi = new System.Windows.Forms.TextBox();
-            this.btnHuy = new System.Windows.Forms.Button();
             this.btnDatHang = new System.Windows.Forms.Button();
             this.lbTrangThaiHD = new System.Windows.Forms.Label();
             this.lbTongTienChu = new System.Windows.Forms.Label();
@@ -57,7 +56,6 @@ namespace Dashboard.Views.NguoiDung
             this.panel2.Controls.Add(this.txtSDT);
             this.panel2.Controls.Add(this.txtGhiChu);
             this.panel2.Controls.Add(this.txtDiaChi);
-            this.panel2.Controls.Add(this.btnHuy);
             this.panel2.Controls.Add(this.btnDatHang);
             this.panel2.Controls.Add(this.lbTrangThaiHD);
             this.panel2.Controls.Add(this.lbTongTienChu);
@@ -70,9 +68,9 @@ namespace Dashboard.Views.NguoiDung
             this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel2.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.panel2.ForeColor = System.Drawing.Color.White;
-            this.panel2.Location = new System.Drawing.Point(658, 0);
+            this.panel2.Location = new System.Drawing.Point(738, 0);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(477, 686);
+            this.panel2.Size = new System.Drawing.Size(397, 686);
             this.panel2.TabIndex = 5;
             // 
             // txtSDT
@@ -111,22 +109,6 @@ namespace Dashboard.Views.NguoiDung
             this.txtDiaChi.Size = new System.Drawing.Size(300, 86);
             this.txtDiaChi.TabIndex = 40;
             // 
-            // btnHuy
-            // 
-            this.btnHuy.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(51)))), ((int)(((byte)(160)))));
-            this.btnHuy.FlatAppearance.BorderSize = 0;
-            this.btnHuy.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnHuy.Font = new System.Drawing.Font("Nirmala UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnHuy.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.btnHuy.Image = global::Dashboard.Properties.Resources.home;
-            this.btnHuy.Location = new System.Drawing.Point(223, 579);
-            this.btnHuy.Name = "btnHuy";
-            this.btnHuy.Size = new System.Drawing.Size(130, 40);
-            this.btnHuy.TabIndex = 39;
-            this.btnHuy.Text = "Add to cart";
-            this.btnHuy.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
-            this.btnHuy.UseVisualStyleBackColor = false;
-            // 
             // btnDatHang
             // 
             this.btnDatHang.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(51)))), ((int)(((byte)(160)))));
@@ -148,7 +130,7 @@ namespace Dashboard.Views.NguoiDung
             // 
             this.lbTrangThaiHD.AutoSize = true;
             this.lbTrangThaiHD.Font = new System.Drawing.Font("Mongolian Baiti", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbTrangThaiHD.Location = new System.Drawing.Point(51, 456);
+            this.lbTrangThaiHD.Location = new System.Drawing.Point(51, 496);
             this.lbTrangThaiHD.Name = "lbTrangThaiHD";
             this.lbTrangThaiHD.Size = new System.Drawing.Size(63, 16);
             this.lbTrangThaiHD.TabIndex = 8;
@@ -156,11 +138,10 @@ namespace Dashboard.Views.NguoiDung
             // 
             // lbTongTienChu
             // 
-            this.lbTongTienChu.AutoSize = true;
             this.lbTongTienChu.Font = new System.Drawing.Font("Mongolian Baiti", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbTongTienChu.Location = new System.Drawing.Point(51, 404);
             this.lbTongTienChu.Name = "lbTongTienChu";
-            this.lbTongTienChu.Size = new System.Drawing.Size(63, 16);
+            this.lbTongTienChu.Size = new System.Drawing.Size(302, 72);
             this.lbTongTienChu.TabIndex = 5;
             this.lbTongTienChu.Text = "Tiền chữ";
             // 
@@ -233,7 +214,7 @@ namespace Dashboard.Views.NguoiDung
             this.panelParent.ForeColor = System.Drawing.Color.White;
             this.panelParent.Location = new System.Drawing.Point(0, 0);
             this.panelParent.Name = "panelParent";
-            this.panelParent.Size = new System.Drawing.Size(658, 686);
+            this.panelParent.Size = new System.Drawing.Size(738, 686);
             this.panelParent.TabIndex = 4;
             // 
             // panelEmpty
@@ -242,7 +223,7 @@ namespace Dashboard.Views.NguoiDung
             this.panelEmpty.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelEmpty.Location = new System.Drawing.Point(0, 63);
             this.panelEmpty.Name = "panelEmpty";
-            this.panelEmpty.Size = new System.Drawing.Size(658, 68);
+            this.panelEmpty.Size = new System.Drawing.Size(738, 68);
             this.panelEmpty.TabIndex = 1;
             // 
             // label5
@@ -260,7 +241,7 @@ namespace Dashboard.Views.NguoiDung
             this.panel3.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel3.Location = new System.Drawing.Point(0, 0);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(658, 63);
+            this.panel3.Size = new System.Drawing.Size(738, 63);
             this.panel3.TabIndex = 0;
             // 
             // DonHang
@@ -302,6 +283,5 @@ namespace Dashboard.Views.NguoiDung
         private System.Windows.Forms.TextBox txtDiaChi;
         private System.Windows.Forms.TextBox txtSDT;
         private System.Windows.Forms.TextBox txtGhiChu;
-        private System.Windows.Forms.Button btnHuy;
     }
 }

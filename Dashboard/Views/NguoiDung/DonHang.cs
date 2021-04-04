@@ -50,7 +50,6 @@ namespace Dashboard.Views.NguoiDung
             if (ThongTin.quyen == "Khachhang" || ThongTin.quyen == "khachhang")
             {
                 //btnTiepNhan.Visible = false;
-                btnHuy.Text = "Huỷ đơn hàng";
 
             }
         }
@@ -62,7 +61,7 @@ namespace Dashboard.Views.NguoiDung
                 trang = TrangThai.TaoPhieu;
             }
 
-            return cn.getDataTable("select s.ten,ct.dongia,ct.soluong,s.anh,ct.id,(ct.soluong * ct.dongia) as 'ThanhTien', h.id,h.trangthai,h.ghichu,u.email,ct.size from HoaDon h join users u on u.Id = h.khachhangId join ChiTietHoaDon ct on h.id = ct.hoadonId join  SanPham s on ct.sanphamId = s.id " +
+            return cn.getDataTable("select (s.ten + ' - Size : ' + ct.size) as 'ten',ct.dongia,ct.soluong,s.anh,ct.id,(ct.soluong * ct.dongia) as 'ThanhTien', h.id,h.trangthai,h.ghichu,u.email,ct.size from HoaDon h join users u on u.Id = h.khachhangId join ChiTietHoaDon ct on h.id = ct.hoadonId join  SanPham s on ct.sanphamId = s.id " +
                 " where (" + FindId + " != 0 or h.khachhangId = " + ThongTin.idUser + ") and ('" + trang + "' = '' or h.trangthai = N'" + trang + "') and (" + FindId + " = 0 or h.id = " + FindId + ")");
         }
         private void getGioHang()
@@ -74,10 +73,6 @@ namespace Dashboard.Views.NguoiDung
                 lbTrangThaiHD.Text = dataHoaDon.Rows[0][7].ToString();
                 txtGhiChu.Text = dataHoaDon.Rows[0][8].ToString();
                 emailKh = dataHoaDon.Rows[0][9].ToString();
-                if (lbTrangThaiHD.Text == "Hủy")
-                {
-                    btnHuy.Visible = false;
-                }
                 IdHoaDong = Int32.Parse(dataHoaDon.Rows[0][6].ToString());
                 panelParent.Controls.Clear();
                 noidungEmail = "Đơn hàng của bạn đã được đặt hàng thành công <br />";
@@ -170,7 +165,7 @@ namespace Dashboard.Views.NguoiDung
             lbTen.Text = item[0].ToString();
             lbTen.Location = new Point(235, 24);
             lbTen.AutoSize = false;
-            lbTen.Size = new Size(200, 40);
+            lbTen.Size = new Size(260, 60);
             lbTen.Font = label1.Font;
             lbTen.ForeColor = Color.White;
             panel.Controls.Add(lbTen);
@@ -186,8 +181,9 @@ namespace Dashboard.Views.NguoiDung
             btnGiamSL.Size = new Size(33, 25);
             if (FindId != 0)
                 btnGiamSL.Enabled = false;
-            btnGiamSL.Location = new Point(491, 22);
+            btnGiamSL.Location = new Point(545, 22);
             btnGiamSL.BackColor = Color.White;
+            btnGiamSL.ForeColor = Color.Black;
             btnGiamSL.Click += (object sender, EventArgs e) =>
             {
                 GiamSoSach(item[4].ToString(), Int32.Parse(item[4].ToString()), Int32.Parse(item[1].ToString()));
@@ -197,7 +193,7 @@ namespace Dashboard.Views.NguoiDung
             // txt số lượng
             txtsL.Text = item[2].ToString();
             txtsL.Name = "txt" + item[4].ToString();
-            txtsL.Location = new Point(530, 22);
+            txtsL.Location = new Point(584, 22);
             txtsL.ForeColor = Color.Black;
             txtsL.Size = new Size(46, 25);
             if (FindId != 0)
@@ -214,7 +210,7 @@ namespace Dashboard.Views.NguoiDung
             btnTangSL.Text = "+";
             btnTangSL.Size = new Size(33, 25);
             btnTangSL.ForeColor = Color.Black;
-            btnTangSL.Location = new Point(582, 22);
+            btnTangSL.Location = new Point(640, 22);
             btnTangSL.Font = label1.Font;
             if (FindId != 0)
                 btnTangSL.Enabled = false;
@@ -227,7 +223,7 @@ namespace Dashboard.Views.NguoiDung
 
             // lb thanh  tiền  tilte
             lbThanhTienTitle.Text = "Thành tiền";
-            lbThanhTienTitle.Location = new Point(514, 59);
+            lbThanhTienTitle.Location = new Point(570, 59);
             lbThanhTienTitle.ForeColor = Color.White;
             lbThanhTienTitle.Font = label1.Font;
             panel.Controls.Add(lbThanhTienTitle);
@@ -235,7 +231,7 @@ namespace Dashboard.Views.NguoiDung
             // lb thanh  tiền 
             lbThanhTien.Text = (Int32.Parse(item[1].ToString()) * Int32.Parse(item[2].ToString())).ToString();
             lbThanhTien.Name = "txttien" + Int32.Parse(item[4].ToString());
-            lbThanhTien.Location = new Point(527, 90);
+            lbThanhTien.Location = new Point(580, 100);
             lbThanhTien.Font = label1.Font;
             lbThanhTien.ForeColor = Color.White;
             panel.Controls.Add(lbThanhTien);
@@ -335,6 +331,11 @@ namespace Dashboard.Views.NguoiDung
         private void btnDatHang_Click(object sender, EventArgs e)
         {
             DatHang();
+        }
+
+        private void btnHuy_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

@@ -29,7 +29,6 @@ namespace Dashboard.Views
         /// </summary>
         private void InitializeComponent()
         {
-            this.lbTitle = new System.Windows.Forms.Label();
             this.cbNhoMatKhau = new System.Windows.Forms.CheckBox();
             this.LinkTaoTaiKhoan = new System.Windows.Forms.LinkLabel();
             this.linkQuenMatKhau = new System.Windows.Forms.LinkLabel();
@@ -39,25 +38,14 @@ namespace Dashboard.Views
             this.label1 = new System.Windows.Forms.Label();
             this.lbLoginFailed = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
-            this.btnLuu = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
+            this.btnLuu = new System.Windows.Forms.Button();
             this.SuspendLayout();
-            // 
-            // lbTitle
-            // 
-            this.lbTitle.AutoSize = true;
-            this.lbTitle.Font = new System.Drawing.Font("Segoe Print", 14.25F, System.Drawing.FontStyle.Italic);
-            this.lbTitle.ForeColor = System.Drawing.Color.Red;
-            this.lbTitle.Location = new System.Drawing.Point(97, 9);
-            this.lbTitle.Name = "lbTitle";
-            this.lbTitle.Size = new System.Drawing.Size(333, 33);
-            this.lbTitle.TabIndex = 110;
-            this.lbTitle.Text = "Tên phầm mềm quần què gì đó";
             // 
             // cbNhoMatKhau
             // 
             this.cbNhoMatKhau.AutoSize = true;
-            this.cbNhoMatKhau.Location = new System.Drawing.Point(103, 270);
+            this.cbNhoMatKhau.Location = new System.Drawing.Point(120, 284);
             this.cbNhoMatKhau.Name = "cbNhoMatKhau";
             this.cbNhoMatKhau.Size = new System.Drawing.Size(93, 17);
             this.cbNhoMatKhau.TabIndex = 108;
@@ -67,7 +55,7 @@ namespace Dashboard.Views
             // LinkTaoTaiKhoan
             // 
             this.LinkTaoTaiKhoan.AutoSize = true;
-            this.LinkTaoTaiKhoan.Location = new System.Drawing.Point(212, 298);
+            this.LinkTaoTaiKhoan.Location = new System.Drawing.Point(229, 312);
             this.LinkTaoTaiKhoan.Name = "LinkTaoTaiKhoan";
             this.LinkTaoTaiKhoan.Size = new System.Drawing.Size(79, 13);
             this.LinkTaoTaiKhoan.TabIndex = 106;
@@ -78,17 +66,18 @@ namespace Dashboard.Views
             // linkQuenMatKhau
             // 
             this.linkQuenMatKhau.AutoSize = true;
-            this.linkQuenMatKhau.Location = new System.Drawing.Point(107, 298);
+            this.linkQuenMatKhau.Location = new System.Drawing.Point(124, 312);
             this.linkQuenMatKhau.Name = "linkQuenMatKhau";
             this.linkQuenMatKhau.Size = new System.Drawing.Size(80, 13);
             this.linkQuenMatKhau.TabIndex = 107;
             this.linkQuenMatKhau.TabStop = true;
             this.linkQuenMatKhau.Text = "Quên mật khẩu";
+            this.linkQuenMatKhau.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkQuenMatKhau_LinkClicked);
             // 
             // txtPassword
             // 
             this.txtPassword.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtPassword.Location = new System.Drawing.Point(146, 165);
+            this.txtPassword.Location = new System.Drawing.Point(120, 176);
             this.txtPassword.Name = "txtPassword";
             this.txtPassword.PasswordChar = '*';
             this.txtPassword.Size = new System.Drawing.Size(202, 29);
@@ -98,7 +87,7 @@ namespace Dashboard.Views
             // txtUser
             // 
             this.txtUser.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtUser.Location = new System.Drawing.Point(146, 121);
+            this.txtUser.Location = new System.Drawing.Point(120, 132);
             this.txtUser.Name = "txtUser";
             this.txtUser.Size = new System.Drawing.Size(202, 29);
             this.txtUser.TabIndex = 104;
@@ -107,7 +96,7 @@ namespace Dashboard.Views
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(88, 173);
+            this.label2.Location = new System.Drawing.Point(59, 176);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(52, 13);
             this.label2.TabIndex = 102;
@@ -116,7 +105,7 @@ namespace Dashboard.Views
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(88, 129);
+            this.label1.Location = new System.Drawing.Point(59, 132);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(55, 13);
             this.label1.TabIndex = 103;
@@ -134,13 +123,23 @@ namespace Dashboard.Views
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(369, 121);
+            this.button1.Location = new System.Drawing.Point(343, 132);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(61, 41);
             this.button1.TabIndex = 112;
             this.button1.Text = "admin";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // button2
+            // 
+            this.button2.Location = new System.Drawing.Point(343, 176);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(61, 41);
+            this.button2.TabIndex = 112;
+            this.button2.Text = "KH";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // btnLuu
             // 
@@ -150,24 +149,14 @@ namespace Dashboard.Views
             this.btnLuu.Font = new System.Drawing.Font("Nirmala UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnLuu.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.btnLuu.Image = global::Dashboard.Properties.Resources.home;
-            this.btnLuu.Location = new System.Drawing.Point(146, 211);
+            this.btnLuu.Location = new System.Drawing.Point(120, 222);
             this.btnLuu.Name = "btnLuu";
-            this.btnLuu.Size = new System.Drawing.Size(179, 42);
+            this.btnLuu.Size = new System.Drawing.Size(202, 42);
             this.btnLuu.TabIndex = 111;
             this.btnLuu.Text = "Đăng nhập";
             this.btnLuu.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
             this.btnLuu.UseVisualStyleBackColor = false;
             this.btnLuu.Click += new System.EventHandler(this.btnLuu_Click);
-            // 
-            // button2
-            // 
-            this.button2.Location = new System.Drawing.Point(369, 165);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(61, 41);
-            this.button2.TabIndex = 112;
-            this.button2.Text = "KH";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // Login
             // 
@@ -178,7 +167,6 @@ namespace Dashboard.Views
             this.Controls.Add(this.button1);
             this.Controls.Add(this.btnLuu);
             this.Controls.Add(this.lbLoginFailed);
-            this.Controls.Add(this.lbTitle);
             this.Controls.Add(this.cbNhoMatKhau);
             this.Controls.Add(this.LinkTaoTaiKhoan);
             this.Controls.Add(this.linkQuenMatKhau);
@@ -196,7 +184,6 @@ namespace Dashboard.Views
         }
 
         #endregion
-        private System.Windows.Forms.Label lbTitle;
         private System.Windows.Forms.CheckBox cbNhoMatKhau;
         private System.Windows.Forms.LinkLabel LinkTaoTaiKhoan;
         private System.Windows.Forms.LinkLabel linkQuenMatKhau;
