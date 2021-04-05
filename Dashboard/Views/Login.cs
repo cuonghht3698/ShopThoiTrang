@@ -83,7 +83,7 @@ namespace Dashboard.Views
         private void button2_Click(object sender, EventArgs e)
         {
             txtUser.Text = "phat";
-            txtPassword.Text = "phat";
+            txtPassword.Text = "123456";
             LoginAdmin();
         }
 

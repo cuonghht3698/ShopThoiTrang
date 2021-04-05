@@ -15,6 +15,11 @@ namespace Dashboard.Views.NguoiDung
     {
         private readonly Connect cn;
         private string search = "";
+        private int PageIndex = 1;
+        private int PageSize = 10;
+        private int SLoai = 0;
+
+
         public ViewSanPham()
         {
             InitializeComponent();
@@ -29,12 +34,21 @@ namespace Dashboard.Views.NguoiDung
         private void ViewSanPham_Load(object sender, EventArgs e)
         {
             btnBack.Visible = false;
+            cbPageSize.SelectedIndex = 1;
+            SLoai = 0;
+            GetLoai();
+            cbLoaiSanPham.SelectedIndex = 0;
             GetSanPham();
         }
 
         private void GetSanPham()
         {
-            var data = cn.getDataTable("select top 10 id,ten,dongia,luotxem,anh  from sanpham");
+            panelSP.Controls.Clear();
+            w = 0;
+            h = 20;
+            count = 0;
+            var data = cn.getDataTable("select s.id,s.ten,s.dongia,s.luotxem,s.anh  from sanpham s join loaisanpham l on s.loaisanphamid = l.id " +
+                    "where ('" + search + "' = '' or s.ten like N'%" + search + "%') and (" + SLoai + " = 0 or l.id = " + SLoai + ")" + " ORDER BY s.ten OFFSET " + (PageIndex - 1) * PageSize + " ROWS FETCH NEXT " + PageSize + " ROWS ONLY");
             if (data.Rows.Count > 0)
             {
                 foreach (DataRow item in data.Rows)
@@ -50,7 +64,7 @@ namespace Dashboard.Views.NguoiDung
         {
             int id = Int32.Parse(row[0].ToString());
             string ten = row[1].ToString();
-            string gia = row[2].ToString();
+            string gia = String.Format("{0:#,##0.##}", row[2].ToString()); 
             string view = row[3].ToString();
             string anh = row[4].ToString();
 
@@ -87,7 +101,7 @@ namespace Dashboard.Views.NguoiDung
                 OpenChiTietSanPham(id);
             };
             panel.Location = new Point(20 + w, h);
-           
+
 
             // anh sp
             pic.Location = picMau.Location;
@@ -112,12 +126,12 @@ namespace Dashboard.Views.NguoiDung
                 //OpenChiTietSanPham(id);
             };
             panel.Controls.Add(Lten);
-            
+            Lgia.Text = gia;
             Lgia.Location = lbGiaMau.Location;
             Lgia.Font = lbGiaMau.Font;
             Lgia.AutoSize = true;
             Lgia.ForeColor = lbGiaMau.ForeColor;
-            Lgia.Text = String.Format("{0:#,##0.##}", gia) + " đ";
+            
             Lgia.Click += (object s, EventArgs e) =>
             {
                 //OpenChiTietSanPham(id);
@@ -137,7 +151,7 @@ namespace Dashboard.Views.NguoiDung
                 //OpenChiTietSanPham(id);
             };
             panel.Controls.Add(Lview);
-           
+
 
             panelSP.Controls.Add(panel);
 
@@ -150,6 +164,8 @@ namespace Dashboard.Views.NguoiDung
             btnBack.Visible = true;
             txtSearch.Visible = false;
             lbSearch.Visible = false;
+            labelPZ.Visible = false;
+            cbPageSize.Visible = false;
             sanpham = panelSP;
             panelMain.Controls.Clear();
             openChildForm(new Detail(id));
@@ -170,7 +186,7 @@ namespace Dashboard.Views.NguoiDung
         Panel sanpham = new Panel();
         private void panel2_Paint_1(object sender, PaintEventArgs e)
         {
-           
+
         }
 
         private void pictureBox1_Click(object sender, EventArgs e)
@@ -185,8 +201,50 @@ namespace Dashboard.Views.NguoiDung
             btnBack.Visible = false;
             txtSearch.Visible = true;
             lbSearch.Visible = true;
+            labelPZ.Visible = true;
+            cbPageSize.Visible = true;
         }
 
+        private void GetLoai()
+        {
+            var loai = cn.getDataTable("SELECT * from LoaiSanPham");
+          
+            if (loai.Rows.Count > 0)
+            {
+                foreach (DataRow item in loai.Rows)
+                {
+                    int id = Int32.Parse(item[0].ToString());
+                    string ten = item[1].ToString();
 
+                    cbLoaiSanPham.Items.Add(id + " -" + ten);
+
+
+                }
+            }
+        }
+        private void txtSearch_TextChanged(object sender, EventArgs e)
+        {
+            search = txtSearch.Text;
+            GetSanPham();
+        }
+
+        private void cbPageSize_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            PageSize = Int32.Parse(cbPageSize.SelectedItem.ToString());
+            GetSanPham();
+        }
+
+        private void cbLoaiSanPham_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (cbLoaiSanPham.SelectedIndex == 0)
+            {
+                SLoai = 0;
+            }
+            else
+            {
+                SLoai = HamChung.GetIdFromCombobox(cbLoaiSanPham.SelectedItem.ToString());
+            }
+            GetSanPham();
+        }
     }
 }
